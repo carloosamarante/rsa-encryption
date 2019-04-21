@@ -1,0 +1,14 @@
+{
+  "name": "rsa",
+  "version": "1.0.0",
+  "description": "rsa encryption",
+  "main": "rsa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Amarante / Mateus Maia",
+  "license": "ISC",
+  "dependencies": {
+    "node-forge": "^0.8.2"
+  }
+}
