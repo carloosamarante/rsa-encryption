@@ -6,7 +6,7 @@ const getDecryptedKey = (d, n, stringEncrypted) => {
     let char = (Math.pow(charNumber, d) % n)
     privateKey.push(String.fromCharCode(Math.round(char)))
   }
-  console.log('Chave Privada: ' + privateKey.join(''))
+  console.log('Mensagem Cifrada: ' + privateKey.join(''))
 }
 
 module.exports = getDecryptedKey

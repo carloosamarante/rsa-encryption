@@ -11,7 +11,7 @@ const getEncryptedKey = (e, n, string) => {
     publicKey.push(Buffer.from(String.fromCharCode(char)).toString('base64'))
   }
 
-  console.log('Chave Pública: ' + publicKey.join(''))
+  console.log('Mensagem decifrada: ' + publicKey.join(''))
   return charEncrypted
 }
 
