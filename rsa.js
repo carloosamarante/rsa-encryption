@@ -1,5 +1,5 @@
 var forge = require('node-forge'),
-    stringInput = 'teste';
+    stringInput = '"The information security is of significant importance to ensure the privacy of communications".';
 
 const firstPrimeValue = () => {
   return new Promise((resolve, reject) => {
@@ -33,16 +33,18 @@ const calculateD = (e, totientN) => {
 
 const encryptedKey = (e, n, string, d) => {
   return new Promise((resolve, reject) => {
-    let charEncrypted = [];
+    let publicKey = [],
+        charEncrypted = [];
 
     for(i=0; i < string.length; i++) {
       let charNumber,
           char;
-      charNumber = string.charCodeAt(i) - 96;
+      charNumber = string.charCodeAt(i);
       char = (Math.pow(charNumber, e) % n);
-      charEncrypted.push(String.fromCharCode(96 + char));
+      charEncrypted.push(char);
+      publicKey.push(Buffer.from(String.fromCharCode(char)).toString('base64'));
     }
-    console.log('Chave Pública: ' + charEncrypted.join(""));
+    console.log('Chave Pública: ' + publicKey.join(""));
 
     decryptedKey(d, n, charEncrypted);
   });
@@ -50,15 +52,15 @@ const encryptedKey = (e, n, string, d) => {
 
 const decryptedKey = (d, n, stringEncrypted) => {
   return new Promise((resolve, reject) => {
-    let charDecrypted = [];
+    let privateKey = [];
 
     for(i=0; i < stringEncrypted.length; i++) {
       let charNumber;
-      charNumber = stringEncrypted[i].charCodeAt(0) - 96;
+      charNumber = stringEncrypted[i];
       char = (Math.pow(charNumber, d) % n);
-      charDecrypted.push(String.fromCharCode(96 + char));
+      privateKey.push(String.fromCharCode(Math.round(char)));
     }
-    console.log('Chave Privada: ' + charDecrypted.join(""));
+    console.log('Chave Privada: ' + privateKey.join(""));
   });
 }
 
