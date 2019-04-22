@@ -1,5 +1,5 @@
 var forge = require('node-forge'),
-    stringInput = 'The information security is of significant importance to ensure the privacy of communications';
+    stringInput = 'teste';
 
 const firstPrimeValue = () => {
   return new Promise((resolve, reject) => {
@@ -38,11 +38,11 @@ const encryptedKey = (e, n, string, d) => {
     for(i=0; i < string.length; i++) {
       let charNumber,
           char;
-      charNumber = string.charCodeAt(i) - 97;
+      charNumber = string.charCodeAt(i) - 96;
       char = (Math.pow(charNumber, e) % n);
-      charEncrypted.push(String.fromCharCode(97 + char));
+      charEncrypted.push(String.fromCharCode(96 + char));
     }
-    console.log('Chave Pública: ' + charEncrypted);
+    console.log('Chave Pública: ' + charEncrypted.join(""));
 
     decryptedKey(d, n, charEncrypted);
   });
@@ -54,11 +54,11 @@ const decryptedKey = (d, n, stringEncrypted) => {
 
     for(i=0; i < stringEncrypted.length; i++) {
       let charNumber;
-      charNumber = stringEncrypted[i].charCodeAt(0) - 97;
+      charNumber = stringEncrypted[i].charCodeAt(0) - 96;
       char = (Math.pow(charNumber, d) % n);
-      charDecrypted.push(String.fromCharCode(97 + char));
+      charDecrypted.push(String.fromCharCode(96 + char));
     }
-    console.log('Chave Privada: ' + charDecrypted);
+    console.log('Chave Privada: ' + charDecrypted.join(""));
   });
 }
 
@@ -67,7 +67,6 @@ const rsaEncryption = async (string) => {
       q = await firstPrimeValue(),
       n = await p * q,
       totientN = await totientValue(p, q);
-  
   for(i = 2; i < totientN; i++) {
     let comprimeTest = await coprimesNumbers(totientN,i);
     if (comprimeTest == 1) {
