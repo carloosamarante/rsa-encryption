@@ -1,7 +1,7 @@
 # RSA Encryption
 The idea of this project is to show the mathematical concepts behind the RSA (Rivest-Shamir-Adleman) algorithm explained in the Cybersecurity classes at [FIAP  University](https://www.fiap.com.br/) (Computer Engineering degrees).
 
-<iframe src="https://giphy.com/embed/A06UFEx8jxEwU" width="480" height="354" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/code-matrix-wallpaper-A06UFEx8jxEwU">via GIPHY</a></p>
+<img src="https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif" width="500" height="500"/>
 
 ## Dependencies and Technologies used
 
