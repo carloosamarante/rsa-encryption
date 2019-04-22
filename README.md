@@ -1,6 +1,8 @@
 # RSA Encryption
 The idea of this project is to show the mathematical concepts behind the RSA (Rivest-Shamir-Adleman) algorithm explained in the Cybersecurity classes at [FIAP  University](https://www.fiap.com.br/) (Computer Engineering degrees).
 
+<img src="https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif" width="500" height="500"/>
+
 ## Dependencies and Technologies used
 
 - __[NodeJS](https://nodejs.org/en/)__ - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
