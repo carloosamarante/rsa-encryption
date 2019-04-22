@@ -1,7 +1,12 @@
 const getCoprimeNumbers = (valueBase, e) => {
-  return (e === 0)
-    ? valueBase
-    : getCoprimeNumbers(e, valueBase % e)
+  while (e !== 0) {
+    let initalE = e
+
+    e = valueBase % e
+    valueBase = initalE
+  }
+
+  return valueBase
 }
 
 module.exports = getCoprimeNumbers
