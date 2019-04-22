@@ -5,8 +5,8 @@ var program = require('commander')
 
 program
   .version('1.0.0', '-v, --version')
-  .option('-b, --bits <n>', '[Obrigatory] The Encrypion bits that will be used (Eg. 4096)', parseInt)
-  .option('-s, --string <string>', '[Obrigatory] The string that you want to encrypt/decrypt')
+  .option('-b, --bits <n>', '[!Mandatory] The Encrypion bits that will be used (Eg. 4096)', parseInt)
+  .option('-s, --string <string>', '[!Mandatory] The string that you want to encrypt/decrypt')
   .parse(process.argv)
 
 if (!program.bits || !program.string) {
